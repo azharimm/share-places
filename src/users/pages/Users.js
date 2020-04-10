@@ -5,7 +5,7 @@ const Users = () => {
     const USERS = [
         {
             id: 'u1',
-            name: 'Azhari',
+            name: 'Zoro',
             image:
                 'https://www.greenscene.co.id/wp-content/uploads/2019/09/Zoro-One-Piece.jpg',
             places: 3
