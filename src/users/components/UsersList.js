@@ -2,6 +2,7 @@ import React from 'react';
 import './UsersList.css';
 import Card from '../../shared/components/UIElements/Card';
 import UserItem from './UserItem';
+import './UsersList.css'
 
 const UsersList = (props) => {
     if (props.items.length === 0) {
@@ -15,7 +16,7 @@ const UsersList = (props) => {
     }
 
     return (
-        <ul>
+        <ul className="users-list">
             {props.items.map((user) => (
                 <UserItem
                     key={user.id}
