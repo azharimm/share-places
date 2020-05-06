@@ -1,5 +1,5 @@
 import React from 'react';
-import './UpdatePlace.css';
+import './Placeform.css';
 import { useParams } from 'react-router-dom';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
