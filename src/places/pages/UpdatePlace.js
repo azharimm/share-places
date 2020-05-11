@@ -3,6 +3,7 @@ import './Placeform.css';
 import { useParams } from 'react-router-dom';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
+import Card from '../../shared/components/UIElements/Card'
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/utils/validators';
 import { useForm } from '../../shared/hooks/form-hook'
 
@@ -22,7 +23,7 @@ const DUMMY_PLACE = [
     },
     {
         id: 'p2',
-        title: 'Empire State Building',
+        title: 'Emp State Building',
         description: 'The most blblbalabala',
         imageUrl:
             'https://cropper.watch.aetnd.com/public-content-aetn.video.aetnd.com/video-thumbnails/AETN-History_VMS/21/202/tdih-may01-HD.jpg?w=1440',
@@ -53,17 +54,19 @@ const UpdatePlace = () => {
     
     const identifiedPlace = DUMMY_PLACE.find((p) => p.id === placeId);
     useEffect(() => {
-        setFormData({
-            title: {
-                value: identifiedPlace.title,
-                isValid: true
-            },
-            description: {
-                value: identifiedPlace.description,
-                isValid: true
-            }
-        }, true)
-        setIsLoading(false)
+        if(identifiedPlace) {
+            setFormData({
+                title: {
+                    value: identifiedPlace.title,
+                    isValid: true
+                },
+                description: {
+                    value: identifiedPlace.description,
+                    isValid: true
+                }
+            }, true)
+            setIsLoading(false)
+        }
     }, [setFormData, identifiedPlace])
 
     const placeUpdateSubmitHandler = e => {
@@ -74,7 +77,9 @@ const UpdatePlace = () => {
     if (!identifiedPlace) {
         return (
             <div className="center">
-                <h2>Could not find place!</h2>
+                <Card>
+                    <h2>Could not find place!</h2>
+                </Card>
             </div>
         );
     }
