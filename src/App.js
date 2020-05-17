@@ -6,6 +6,7 @@ import {
     Switch
 } from 'react-router-dom';
 import Users from './users/pages/Users';
+import Auth from './users/pages/Auth';
 import NewPlace from './places/pages/NewPlace';
 import UserPlaces from './places/pages/UserPlaces';
 import UpdatePlace from './places/pages/UpdatePlace';
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path="/:userId/places" component={UserPlaces} exact />
                     <Route path="/places/new" component={NewPlace} exact />
                     <Route path="/places/:placeId" component={UpdatePlace} exact />
+                    <Route path="/auth" component={Auth} exact />
                     <Redirect to="/" />
                 </Switch>
             </main>
