@@ -77,7 +77,7 @@ const UpdatePlace = () => {
     if(isLoading) {
         return (
             <div className="center">
-                <LoadingSpinner asOverLay/>
+                <LoadingSpinner asOverlay/>
             </div>
         )
     }
